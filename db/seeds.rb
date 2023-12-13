@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+10.times do
+  restaurant = Restaurant.create(name: "Vincent" + rand(10..10).to_s, address: "moi", category: Restaurant::CATEGORY.sample, phone_number: "0000000000")
+  10.times do review = Review.create(rating: rand(0..5), content: "Bolobolo", restaurant: restaurant)
+  end
+end
